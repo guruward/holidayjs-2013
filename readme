@@ -1,0 +1,8 @@
+Holiday_JS 2013 Hackathon
+
+This is a MEAN Stack application. This hack was to create a christmas themed app.
+The application allows the user to enter a search string for a song or artiist.
+
+It uses the spotify api to bring back a JSON list albums. 
+
+Angular ng-repeat is used to display the titles for a user to choose the album to be played.
