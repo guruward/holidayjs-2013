@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>HolidayJS Nukes Christmas</title>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+    <script src="javascripts/app.js"></script>
+
+
+</head>
+<body>
+<div id="top" style="padding-top: 60px;"></div>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="fa fa-caret-square-o-down navbar-toggle visible-xs" data-toggle="collapse"
+               data-target=".navbar-responsive-collapse"></a>
+            <a class="navbar-brand">HolidayJS Nukes Christmas</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#top">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container" data-ng-controller="nukeCtrl">
+
+
+        <input id="lyric" class="form-control" ng-model="songName">
+        <button class="btn" ng-click="getSong()">Get Song</button>
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-striped">
+                    <tr ng-repeat="album in albums"><td>{{album.name}}</td><td> <button class="btn btn-small" ng-click="play()">play</button></td></tr>
+                </table>
+
+            </div>
+
+            <div class="col-md-6" >
+                <iframe id="player" ng-src="{{trustSrc(pAlbum)}}" style="position:fixed" width="600"></iframe>
+            </div>
+        </div>
+
+</div>
+
+
+</body>
+</html>
